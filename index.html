@@ -1,22 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=>, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=>, initial-scale=1.0" />
     <title>Custom Alebrije</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1>Create your Own Alebrije</h1>
+    <a href="start here.html"><button type="button">Start Here</button></a>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var isPanning = false;
+        var startX = 0;
+        var startY = 0;
+        var startScrollLeft = 0;
+        var startScrollTop = 0;
+
+        document.body.addEventListener("mousedown", function (event) {
+          isPanning = true; // Start panning
+          startX = event.clientX; // Store initial mouse X position
+          startY = event.clientY; // Store initial mouse Y position
+          startScrollLeft = window.scrollX; // Store initial scroll X position
+          startScrollTop = window.scrollY; // Store initial scroll Y position
+        });
+
+        document.body.addEventListener("mouseup", function () {
+          isPanning = false; // Stop panning
+        });
+
+        document.body.addEventListener("mouseleave", function () {
+          isPanning = false; // Stop panning if the mouse leaves the document
+        });
+
+        document.body.addEventListener("mousemove", function (event) {
+          if (!isPanning) return; // If not panning, ignore
+
+          var deltaX = event.clientX - startX; // Calculate change in X
+          var deltaY = event.clientY - startY; // Calculate change in Y
+
+          // Set new scroll position
+          window.scrollTo(startScrollLeft - deltaX, startScrollTop - deltaY);
+        });
+      });
+    </script>
+
     <style>
-        body {
-            /* set background image */
-            background-image: url('images/Alebrije Background.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
+      body {
+        /* set background image */
+        margin: 0;
+        padding: 0;
+        background-image: url("images/Alebrije Background edited.png");
+        background-size: 200vw 100% !important;
+        background-repeat: no-repeat;
+        height: 200vh;
+        width: 200vw !important;
+        overflow: hidden;
+      }
     </style>
-</head>
-
-<body>
-   <h1>Create your Own Alebrije</h1> 
-   <button type="button">Start Here</button> 
-</body>
-
+  </body>
 </html>
