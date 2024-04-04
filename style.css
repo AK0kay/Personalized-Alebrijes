@@ -1,4 +1,60 @@
-H1{
-    color: black;
-    font-family: 'Courier New', Courier, monospace;
+@font-face {
+    font-family: billy;
+    src: url(font/billy.ttf);
 }
+
+h1{
+    color: black;
+   font-family: "billy";
+   font-size: 40px; 
+   margin-top: 600px;
+    
+}
+
+button {
+    background-color: transparent;
+    border: 2px solid black;
+    padding: 10px 20px;
+    font-family: "billy";
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+button:hover {
+    color: #fff;
+    border-color: #fff;
+    transition: all ease-in 0.1s !important;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.glow-text {
+    color: white; /* Temporary color for clarity, remove before deployment */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0); /* Initial shadow for animation */
+    animation: glow 2s ease-in-out infinite alternate; /* Animation definition */
+    overflow: hidden;
+  }
+  
+  
+  @keyframes glow {
+    from { text-shadow: 0 0 5px rgba(255, 255, 255, 0); }
+    to   { text-shadow: 0 0 10px rgba(255, 255, 255, 1); }
+  }
+  
+  h2{
+    position: absolute;
+    top: 150px;
+    left: 200px;
+    font-family: billy;
+    font-size: 30px;
+    color: white;
+  }

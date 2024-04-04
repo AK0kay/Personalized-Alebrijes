@@ -1,2 +1,44 @@
 body {
-    background-color: #fac148;
+    background-color: #FCDA91;
+}
+
+.home-button img {
+    width: 60px;
+    height: auto;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+
+.return-button img{
+    width: 35px;
+    height: auto;
+    position: relative;
+    margin-left: 10px;
+}
+.bunny-button img {
+    width: 250px;
+    height: auto;
+    padding: 0px;
+    margin:0;
+    border:0;
+}
+
+.cayote-button img {
+    width: 250px;
+    height: auto;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+  }
+
+.bunny-button, .cayote-button{
+    margin: 20px;
+    margin-top: 200px;
+}
+
+.bunny-button:hover, .cayote-button:hover {
+    filter: drop-shadow(-10px 10px #3D5461); 
+    transition: all ease-in 0.1s !important;
+  }
